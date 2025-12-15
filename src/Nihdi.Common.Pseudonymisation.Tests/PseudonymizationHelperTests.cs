@@ -90,9 +90,9 @@ public class PseudonymisationHelperTest
 
         _pseudonymisationHelper =
             PseudonymisationHelper.Builder()
-                                  .JwksUrl(new Uri("https://api-acpt.ehealth.fgov.be/etee/v1/pubKeys/cacerts/jwks?identifier=0406798006&type=CBE&applicationIdentifier=UHMEP&use=enc"))
-                                  .JwkSupplier(jwksSupplier)
-                                  .PrivateKeySupplier(privateKeySupplier)
+                                // .JwksUrl(new Uri("https://api-acpt.ehealth.fgov.be/etee/v1/pubKeys/cacerts/jwks?identifier=0406798006&type=CBE&applicationIdentifier=UHMEP&use=enc"))
+                                // .JwkSupplier(jwksSupplier)
+                                // .PrivateKeySupplier(privateKeySupplier)
                                   .PseudonymisationClient(new InternalPseudonymisationClient(internalPseudonymisationHelper, _dateTimeService, _dynamicDomainJson))
                                   .Build();
     }
@@ -500,7 +500,6 @@ public class PseudonymisationHelperTest
         };
     }
 
-    // Test methods remain as instance methods
     [TestMethod]
     public async Task Test()
     {
