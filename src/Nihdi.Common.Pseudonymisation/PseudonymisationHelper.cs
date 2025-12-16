@@ -84,8 +84,7 @@ public sealed class PseudonymisationHelper
         if (jwksSupplier == null)
         {
             _logger.LogInformation($"{nameof(jwksSupplier)} is null: this {nameof(PseudonymisationHelper)} will not be able to encrypt or decrypt any transit info");
-
-            _jwkSet = (Task<JsonWebKeySet>)Task.FromException(new ArgumentNullException($"{nameof(jwksSupplier)} cannot be null if you need to encrypt/decrypt transit info"));
+            _jwkSet = Task.FromException<JsonWebKeySet>(new NullReferenceException($"{nameof(jwksSupplier)} cannot be null if you need to encrypt/decrypt transit info"));
         }
         else
         {
@@ -308,16 +307,6 @@ public sealed class PseudonymisationHelper
         var ttl = parsedEHealthDomain["timeToLiveInTransit"]?.GetValue<string>() ?? string.Empty;
 
         var timeToLiveInTransit = XmlConvert.ToTimeSpan(ttl);
-
-        if (activeKid == null)
-        {
-            throw new InvalidOperationException("No secretKey contains an activeKid claim.");
-        }
-
-        if (activeKeyAlgorithm == null)
-        {
-            throw new InvalidOperationException("Impossible to determine the activeKey algorithm.");
-        }
 
         var domain = new Domain(
             domainKey,
