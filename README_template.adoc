@@ -179,7 +179,7 @@ For example, the software of a physician only needs to provide `pseudonymisation
 
 [discrete]
 === Code snippet
-.PseudonymizationHelper initialization example
+.PseudonymisationHelper initialization example
 
 [source,cs]
 ----
@@ -360,7 +360,7 @@ eHealth asks not to pseudonymise values that exceed 32 bytes. Depending on the e
 include::src//Nihdi.Common.Pseudonymisation.CodeSamples/PseudonymiseAString.cs[tag=PseudonymizeAString]
 ----
 
-.Using ISO-88659-1 Charset
+.Using ISO-8859-1 Charset
 [source,cs,indent=2]
 ----
 include::src//Nihdi.Common.Pseudonymisation.CodeSamples/PseudonymiseAString.cs[tag=PseudonymizeAStringWithEncoding]
@@ -452,7 +452,7 @@ After this period, the pseudonym in transit will no longer be usable.
 
 === Convert a pseudonym at rest to a pseudonym in transit of another domain
 
-As a REST API, I want to convert a pseudonym of my domain in a pseudodym in 
+As a REST API, I want to convert a pseudonym of my domain in a pseudonym in 
 transit of another domain before to send it to a REST API that uses this other
  domain.
 
@@ -495,7 +495,7 @@ include::src//Nihdi.Common.Pseudonymisation.CodeSamples/AddCustomInformationInto
 
 As a REST API, I want to add a `signature` header property in the `transitInfo` to allow the caller (and myself, if the caller sends this pseudonym back) to verify that I created this pseudonym.
 
-NOTE: This is a hypothetzcuical example; there is no apparent need to sign a `transitInfo`.
+NOTE: This is a hypothetical example; there is no apparent need to sign a `transitInfo`.
 
 .Synchronous code
 [source,cs,indent=2]
