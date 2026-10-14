@@ -121,7 +121,7 @@ For example, the software of a physician only needs to provide
 
 **Code snippet**
 
-PseudonymizationHelper initialization example
+PseudonymisationHelper initialization example
 
 ``` cs
         var helper =
@@ -819,7 +819,7 @@ Using default Charset (UTF-8)
           .From("Cédric Dupont")
           .Pseudonymize().Result;
 ```
-Using ISO-88659-1 Charset
+Using ISO-8859-1 Charset
 
 ``` cs
   var pseudonym =
@@ -1039,7 +1039,7 @@ Due to potential clock desynchronization, the library permits the use of a pseud
 
 ## Convert a pseudonym at rest to a pseudonym in transit of another domain 
 
-As a REST API, I want to convert a pseudonym of my domain in a pseudodym in transit of another domain before to send it to a REST API that uses this other domain.
+As a REST API, I want to convert a pseudonym of my domain in a pseudonym in transit of another domain before to send it to a REST API that uses this other domain.
 
 In the following example, the pseudonym at rest from the domain `uhmep_v1` will be converted into a pseudonym in transit of the domain `ehealth_v1`. Be.Ict.Reuse .Synchronous code
 
@@ -1111,7 +1111,7 @@ As a REST API, I want to add a `signature` header property in the `transitInfo` 
 
 Note
 
-This is a hypothetzcuical example; there is no apparent need to sign a
+This is a hypothetical example; there is no apparent need to sign a
 `transitInfo`.
 
 Synchronous code
